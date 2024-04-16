@@ -1,0 +1,45 @@
+How to Scale application (Puzzle Piece-2)
+
+
+
+After choosing the database, now its time to scale the application for large amount of network traffic and data.
+
+
+
+Scalability describes your system’s ability to adapt to change and demand. Good scalability protects you from future downtime and ensures the quality of your service.
+
+But what options do you have when it comes to implementing scaling and ensuring your business’s scalability? That’s where horizontal and vertical scaling come in.
+
+
+
+Vertical Scaling (aka scaling up):
+
+               Vertical scaling describes adding more power to your current machines. For instance, if your server requires more processing power, vertical scaling would mean upgrading the CPUs. You can also vertically scale the memory, storage, or network speed.
+
+Additionally, vertical scaling may also describe replacing a server entirely or moving a server’s workload to an upgraded one.
+
+
+
+Horizontal Scaling (aka scaling out):
+
+         Horizontal Scaling refers to adding more servers to meet the demand. For instance, if your server is running out of processing power, you can add another machine to meet the demand. However, the downside of this may be the added complexity of your operation. You must decide which machine does what and how your new machines work with your old machines.
+
+
+
+Vertical Scaling (VS) -vs- Horizontal Scaling (HS):
+
+1. HS has minimal downtime, but VS requires downtime as it is a single node.
+
+2. HS can distribute traffic with a Load Balancer, thus increasing efficiency. VS can't be used with a Load Balancer.
+
+3. HS has low failure resilience and low fault tolerance as it has a backup cluster, but VS has high resilience and high fault tolerance since it’s a single source of failure.
+
+4. HS has higher performance than VS.
+
+5. HS has increased complexity of maintenance and operation compared to VS, as multiple servers are harder to maintain than a single server.
+
+
+
+Both horizontal and vertical scaling have their own benefits and limitations. 
+
+Since there isn’t a one-size-fits-all solution for organizations, you need to scale according to your needs and resources.
