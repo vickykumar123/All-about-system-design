@@ -1,0 +1,29 @@
+Modern applications must process millions of users simultaneously and return the correct text, videos, images, and other data to each user in a fast and reliable manner. To handle such high volumes of traffic, most applications have many resource servers with duplicate data between them. 
+
+A load balancer is a device that sits between the user and the server group and acts as an invisible facilitator, ensuring that all resource servers are used equally. 
+Load balancing directs and controls internet traffic between the application servers and their visitors or clients. As a result, it improves an application’s availability, scalability, security, and performance.
+
+Benefits:
+1. Application availability: It reduces the downtime by automatically redirecting the traffic to healthy server, thus increases the fault tolerance.
+2. Application scalability: Load balancer directs the traffic intelligently among the multiple server. So it prevents it from bottlenecks at one server. Also it predicts the traffic and adds or remove server if needed.
+3. Application security: Load balancers come with built-in security features to add another layer of security to your internet applications. They are a useful tool to deal with distributed denial of service(DDoS) attacks. It monitor traffic and block malicious content.
+4. Application performance: It reduce the latency they distribute the load evenly among the server. It also helps to redirect the client request to near geo-location server to reduce the latency.
+
+Load balancing algorithm:
+ It falls under two categories: Static and Dynamic load balancing.
+1. Static Load Balancing: It follow fixed rules and are independent of the current server state. It uses following method:
+ - Round Robin 
+ - Weighted Round-Robin (based on the priority)
+ - IP hash (convert client IP to a number, which is mapped to the server)
+2. Dynamic Load Balancing: It examine the current state of the servers before distributing traffic. It uses following method:
+ - Least connection method ( load balancer checks which servers have the fewest active connections and sends traffic to those servers)
+ - Weighted least connection method (load balancer sends the new client requests to the server with the least connections by capacity)
+ - Resource based routing ( load balancers distribute traffic by analyzing the current server load)
+
+Types of Load Balancer (LB):
+1. Application LB (Used with HTTP)
+2. Network LB (Based on IP)
+3. Global server LB (based on geo-location)
+4. DNS LB
+
+I know this is overwhelming information, But loading balancing is consider to be important if you are scaling your to million user.
