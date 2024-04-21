@@ -1,0 +1,32 @@
+How much data does YouTube store daily?
+
+YouTube stores a massive amount of data daily due to the sheer volume of videos uploaded to the platform. While we don't have access to YouTube's real-time data, we can make an estimate based on some publicly available information.
+
+As of my last update, YouTube reported that more than 500 hours of video content were uploaded to the platform every minute. 
+Let's break this down:
+500 hours/minute * 60 minutes/hour = 30,000 hours
+
+Now, we need to convert hours to seconds: 
+30,000 hours/hour * 3600 seconds/hour = 108,000,000 seconds/hour
+So, approximately 108 million seconds of video are uploaded to YouTube every hour.
+
+Now, let's estimate the average size of a video uploaded to YouTube. This can vary widely depending on factors like resolution, length, and compression. A rough estimate might be around 100 MB per minute of video for standard definition content. For higher resolutions or longer videos, the size would be larger.
+
+So, if we use the 100 MB per minute estimate:
+100 MB/minute * 30,000 minutes = 3,000,000 MB/hour
+Converting MB to TB: 3,000,000 MB/hour * (1 TB / 1024 MB) = 2,929.69 TB/hour
+This estimation suggests that YouTube may store approximately 2,929.69 terabytes (TB) of new video data every hour.
+
+Now youtube also have to backup data, let assume 3 copies then:
+3 replicas * 2,929.69 TB = 8789.07 TB/hour.
+
+What about video formats and encoding? Let's assume a single type of encoding, mp4, and the formats will take a 720p video and store it in 480, 360, 240 and 144p respectively. That means approximately half the video size per codec.
+If X is the original storage requirement,
+We have X + X/2 + X/4 + X/8 == 2*X.
+With redundancy, that's 2X * 3 = 6X.
+
+This is 6X times the video stored for the per hour video.
+
+Even we have to cache the data, add storage for thumbnail photos, text data, comments so on...
+
+Keep in mind that this is a rough estimate, and the actual amount of data stored by YouTube may vary depending on factors like video compression, upload rates, and changes in user behavior. Additionally, YouTube likely has sophisticated systems for managing and compressing video content to optimize storage efficiency.
