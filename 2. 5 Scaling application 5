@@ -1,0 +1,21 @@
+Scaling application (Puzzle Piece-5)
+
+Your app is getting better. It has more features, more active users, and every day it collects more data. Your database is now causing the rest of your application to slow down. This where Database sharding helps.
+
+Database sharding is the process of storing a large database across multiple machines. A single machine, or database server, can store and process only a limited amount of data. Database sharding overcomes this limitation by splitting data into smaller chunks, called shards, and storing them across several database servers. All database servers usually have the same underlying technologies, and they work together to store and process large volumes of data.
+
+Type of Sharding: 
+1. Range Based Sharding: In this method, we partition the data based on the range of the key.
+2. Key/Hash Based Sharding: In this method, we generate a hash value of the key. This hash function determines which shard a particular piece of data belongs to.
+3. Directory Based Sharding: In this method, we create a lookup table that uses shared key to check which shard holds which data.
+4. Geo-Based Sharding: In this method, we partition the database based on geo-location. It ensures that data closer to the users is stored in nearby shards, reducing latency and improving performance.
+
+Partitioning Vs Sharding :-
+1. In Partitioning, we split the table into multiple table in the same database instance. Whereas in sharding we split the tabel into multiple tables across multiple database instances.
+2. Sharding requires a mechanism to route queries and transactions to the appropriate shard. Partitions can be located on the same server or within a single database
+
+Pros of Sharding:
+Scalability, Improved Performance, Fault Tolerance, Efficient Resource Utilization, Data Isolation.
+
+Cons of Sharding:
+Increased complexity due to routing of query, You cannot process queries for two different table in different shard, So transaction across the shard is not possible.
