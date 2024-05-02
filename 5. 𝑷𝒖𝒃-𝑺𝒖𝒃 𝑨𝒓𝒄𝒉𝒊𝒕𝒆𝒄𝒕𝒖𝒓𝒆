@@ -1,0 +1,24 @@
+𝑷𝒖𝒃/𝑺𝒖𝒃 𝑨𝒓𝒄𝒉𝒊𝒕𝒆𝒄𝒕𝒖𝒓𝒆
+
+Imagine you have a newspaper delivery service where subscribers (customers) subscribe to receive newspapers, and publishers (newspaper companies) publish newspapers. This same for the Pub/Sub architecture.
+
+A Publish­-Subscribe Architecture is a messaging pattern where the publishers broadcast messages, with no knowledge of the subscribers. Similarly the subscribers ‘listen’ out for messages regarding topic/categories that they are interested in without any knowledge of who the publishers are. The event bus transfers the messages from the publishers to the subscribers.
+
+Each subscriber only receives a subset of the messages that have been sent by the publisher; they only receive the message topics or categories they have subscribed to.
+
+𝐓𝐡𝐞 𝐏𝐮𝐛/𝐒𝐮𝐛 𝐩𝐚𝐭𝐭𝐞𝐫𝐧 𝐛𝐫𝐢𝐧𝐠𝐬 𝐦𝐚𝐧𝐲 𝐛𝐞𝐧𝐞𝐟𝐢𝐭𝐬 𝐭𝐨 𝐭𝐡𝐞 𝐭𝐚𝐛𝐥𝐞:
+1. Loose coupling between components, making your system more modular and flexible.
+2. High scalability (in theory, Pub/Sub allows any number of publishers to communicate with any number of subscribers). 
+3. Language-agnostic and protocol-agnostic, which makes it straightforward and fast to integrate Pub/Sub into your tech stack. 
+4. Asynchronous, event-driven communication that’s ideal for realtime, low-latency apps. 
+
+𝐇𝐨𝐰 𝐝𝐨𝐞𝐬 𝐏𝐮𝐛/𝐒𝐮𝐛 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞 𝐰𝐨𝐫𝐤?
+1. Publishers create and send messages to topics in the Pub/Sub system.
+2. Subscribers express interest in receiving messages from specific topics.
+3. Topics categorize messages; publishers send messages to specific topics, and subscribers subscribe to topics to receive messages of interest.
+4. Message brokers manage message routing between publishers and subscribers, forwarding messages based on subscriptions.
+5. When a message is sent to a topic, the message broker forwards it to all subscribed subscribers.
+6. Pub/Sub enables asynchronous communication, allowing publishers to send messages independently of subscriber activity, and subscribers to receive messages without publishers being active.
+
+𝑼𝒔𝒆 𝑷𝒖𝒃/𝑺𝒖𝒃 𝒘𝒉𝒆𝒏 𝒚𝒐𝒖 𝒏𝒆𝒆𝒅:
+Decoupling components, Event-driven systems, Scalability, Real-time data processing, Microservices architecture, Asynchronous communication.
