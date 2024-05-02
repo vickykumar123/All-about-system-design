@@ -1,0 +1,26 @@
+𝐃𝐚𝐭𝐚𝐛𝐚𝐬𝐞 𝐌𝐢𝐠𝐫𝐚𝐭𝐢𝐨𝐧, 𝘸𝘩𝘦𝘳𝘦 𝘰𝘯𝘦 𝘥𝘢𝘵𝘢𝘣𝘢𝘴𝘦 𝘥𝘰𝘰𝘳 𝘤𝘭𝘰𝘴𝘦𝘴, 𝘢𝘯𝘰𝘵𝘩𝘦𝘳 𝘰𝘯𝘦 𝘰𝘱𝘦𝘯𝘴 – 𝘩𝘰𝘱𝘦𝘧𝘶𝘭𝘭𝘺!
+
+A Database migration strategy helps to avoid creating a poor experience that often generates more issues than it solves.
+
+𝑨𝒄𝒄𝒐𝒓𝒅𝒊𝒏𝒈 𝒕𝒐 𝒂 𝒔𝒕𝒖𝒅𝒚, 𝒅𝒂𝒕𝒂𝒃𝒂𝒔𝒆 𝒎𝒊𝒈𝒓𝒂𝒕𝒊𝒐𝒏 𝒄𝒂𝒏 𝒍𝒆𝒂𝒅 𝒕𝒐 𝒎𝒐𝒓𝒆 𝒕𝒉𝒂𝒏 $250,000 𝒊𝒏 𝒄𝒐𝒔𝒕 𝒐𝒗𝒆𝒓𝒓𝒖𝒏𝒔.
+
+How do you move millions of records, each entry representing a user's aspirations, into a new database? Without any downtime? AND without any mistakes…
+Luckily, there are different methods to choose from. Here are two of them, a simple one and a complex one. Check them out and find the one that suits your needs. 
+
+🖋️𝐁𝐫𝐮𝐭𝐞 𝐟𝐨𝐫𝐜𝐞 𝐚𝐩𝐩𝐫𝐨𝐚𝐜𝐡 (Requires downtime) :
+It is simple but you have to afford for downtime. Below are steps to follow the approach.
+1. Stop the existing DB. 
+2. This fails all incoming requests to the DB (You should probably have some email communication setup beforehand to notify users of a planned outage). 3. Take a Data Dump of the current DB into your shiny new DB. 
+4. When the process completes, point the existing servers to the new DB. This will take a deployment or a server restart.
+
+🖋️ 𝐎𝐩𝐭𝐢𝐦𝐢𝐬𝐞𝐝 𝐚𝐩𝐩𝐫𝐨𝐚𝐜𝐡 (minimal downtime):
+It is complex, but you will happy that you are not affording huge downtime.
+1. Set up a change data capture solution (Similar to a SQL trigger). 
+2. Take a database copy of all older records. 
+3. Setup a view or proxy to serve existing clients through the old database. 
+4. Set the clients to point to the proxy. 
+5. Now point the proxy to the new database. 
+6. Point clients to the new database directly (this requires a deployment or server restart). 
+7. Delete the proxy. 
+
+Yey! Remember, despite our best efforts, there is always a chance of a data miss. It's best to check for correctness after deployment.
