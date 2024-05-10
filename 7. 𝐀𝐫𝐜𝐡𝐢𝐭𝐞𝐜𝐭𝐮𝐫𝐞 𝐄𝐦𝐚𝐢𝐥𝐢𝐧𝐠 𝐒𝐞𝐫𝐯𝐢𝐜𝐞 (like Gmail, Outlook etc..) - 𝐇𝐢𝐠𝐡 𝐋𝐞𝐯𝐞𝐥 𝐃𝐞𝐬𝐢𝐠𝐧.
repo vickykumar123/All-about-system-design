@@ -1,0 +1,29 @@
+𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞 𝐄𝐦𝐚𝐢𝐥𝐢𝐧𝐠 𝐒𝐞𝐫𝐯𝐢𝐜𝐞 (like Gmail, Outlook etc..) - 𝐇𝐢𝐠𝐡 𝐋𝐞𝐯𝐞𝐥 𝐃𝐞𝐬𝐢𝐠𝐧.
+LinkedIn Post:https://www.linkedin.com/feed/update/urn:li:activity:7194561800879714304/
+
+𝑹𝒆𝒒𝒖𝒊𝒓𝒆𝒎𝒆𝒏𝒕𝒔: 
+Implementing service registration, Allowing user registration, login (2FA), and profile creation, Set preferences for emails and tagging them, Sending email with attachments, Using keywords to search emails, Spam and virus detection, Making contacts and groups.
+
+1. Implementing Service Registration: 
+- Distributed gateway service or Load-balancer: It receives all the external requests and routes it to correct internal services.
+- Service Manager: Maintains a method-to-handler mapping registry and includes a heartbeat mechanism to verify service availability.
+- Distributed cache (like Redis, Memcache) : Contains mapping of internal services, Since the mapping does not change frequently we can store the mapping in cache. 
+
+2.  Allowing users to login (2-FA) and register
+- Auth service (Database like PostgreSQL): Validates username existence and password correctness in the database, verifies one-time codes within a fixed interval for two-factor authentication, checks user verification status, and updates cache upon user data modifications. User token stored in cache for efficient access instead of making repeated API calls to the authentication service.
+- Message Service: Sends one-time codes to users via email, SMS, etc., and includes message templates for various scenarios.
+- Profile Service (Database like PostgreSQL): It handles all the requests that involves creating and editing of profiles. 
+
+3. Sending, Tagging and Searching emails
+- Email Service: Receives email content, sender and receiver addresses from users, and retrieves emails from the search engine service to send to users.
+- Message queue (like Kafka, RabbitMQ): It receives email from the email service and sends it to preference and spam detector service. 
+- Search Engine service:- It maps keywords in emails to their locations using an inverted index system.
+- Spam Detector Service: examines the content/subject of emails and their timestamps to determine if they are spam, checking them at regular intervals (like a cron job) or upon receiving new emails.
+- Distributed File Service: It stores all the attachments of emails. 
+- Preference service: It pulls emails from the message queue and assigns preference to emails. 
+
+4. Managing contacts and groups
+- Contacts Service/ Contacts Manager: etrieves processed emails from the message queue and maintains the mapping of sender to receiver.
+- Message queue: receives processed email events and serves as a communication channel. Search Engine and Contacts Manager service pull processed emails from this queue for further processing.
+- SMTP Server: stands for Simple Mail Transfer Protocol. It sends emails to external server
+- IMAP Server: stands Internet Message Access Protocol. It receives emails from external server.
